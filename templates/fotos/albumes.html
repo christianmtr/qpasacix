@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook</title>
+</head>
+<body>
+	<center>
+		<h1>Datos extraidos de Facebook, con Facebook Python-SDK</h1>
+		<h3>Lista de álbumes del Fanpage</h3>
+		<div>
+			{% for data in data %}
+				<label>Álbum ID: </label><label>{{ data.id }}</label></br>
+				<label>Nombre: </label><a href="/album/{{ data.id }}/">{{ data.name }}</a></br>
+				<a href="{{ data.link }}">Link Fb</a>
+				</p>
+			{% endfor %}
+		</div>
+	</center>
+</body>
+</html>

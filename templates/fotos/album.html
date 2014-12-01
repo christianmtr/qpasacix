@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook</title>
+</head>
+<body>
+	<center>
+		<h1>Datos extraidos de Facebook, con Facebook Python-SDK</h1>
+		<h3>Fotos del álbum {{ ids }}</h3>
+		<div>
+			{% for img in imagenes %}
+				{% if img.images %}
+					{% for l in img.images %}
+						<a href="{{ l.source }}">Foto</a>
+						<label>Tamaño: </label><label>{{ l.height }}x{{ l.width }}</label></br>
+					{% endfor %}
+					</p>
+				{% else %}
+					<label>Sin datos para mostrar</label></p>
+				{% endif %}
+				
+			{% endfor %}
+		</div>
+	</center>
+</body>
+</html>
