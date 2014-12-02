@@ -3,7 +3,6 @@ from django.contrib import admin
 from fotos import views as fotos
 from index import views as inicio
 
-admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
