@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bienvenido {{ yo.name }}</title>
+</head>
+<body>
+	<center>
+		<h1>Hola, {{ yo.name }}.</h1>
+		<h3>--Estás en el mejor sitio social de Chiclayo.</br>Tú Id es {{ yo.id }}</h3>
+		<div>
+			{% if amigos %}
+				<label>Tienes amigos que han dado like a esta página:</label>
+				{% for amigos in amigos %}
+					<a href="https://facebook.com/{{amigos.id}}"><label>{{ amigos.name }}</label></a></p>
+				{% endfor %}
+			{% else %}
+				<label>Ninguno de tus amigos han dado like a nuestra página :(</label></br>
+				<label>Compartela!</label>
+		</div>
+	</center>
+</body>
+</html>

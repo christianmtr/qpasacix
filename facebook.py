@@ -33,6 +33,11 @@ if user:
 
 """
 
+#
+#FACEBOOK_APP_ID = "524224001003755"
+#FACEBOOK_APP_SECRET = "f99377b14948cd0dcf191b97bc352be5"
+#
+
 import cgi
 import time
 import urllib

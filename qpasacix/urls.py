@@ -1,6 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from fotos import views
+from fotos import views as fotos
+from index import views as inicio
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -9,7 +12,11 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^albumes/', views.obtienealbumes, name='obtienealbumes'),
+	url(r'^albumes/', fotos.obtienealbumes, name='obtienealbumes'),
 
-	url(r'^album/(\d+)/', views.muestraalbum, name='muestraalbum'),    
+	url(r'^album/(\d+)/', fotos.muestraalbum, name='muestraalbum'),
+
+	url(r'^index/', inicio.inicio, name='inicio'),
+
+	url(r'^comparte/', inicio.compartir, name='compartir'),
 )
