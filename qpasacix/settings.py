@@ -7,6 +7,7 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
+import dj_database_url#heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -28,7 +29,9 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates/'),
     )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*.heroku.com',
+    ]
 
 
 # Application definition
@@ -68,6 +71,12 @@ WSGI_APPLICATION = 'qpasacix.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
+DATABASES = {
+      'default' : {
+         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+         'NAME' : 'db_name',
+      }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
