@@ -8,13 +8,10 @@
 	"buffers":
 	[
 		{
-			"contents": "\"\"\"\nDjango settings for qpasacix project.\n\nFor more information on this file, see\nhttps://docs.djangoproject.com/en/1.7/topics/settings/\n\nFor the full list of settings and their values, see\nhttps://docs.djangoproject.com/en/1.7/ref/settings/\n\"\"\"\n\n# Build paths inside the project like this: os.path.join(BASE_DIR, ...)\nimport os\nBASE_DIR = os.path.dirname(os.path.dirname(__file__))\n\n\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/\n\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = '8j73$!$)@3m5ivnu!_y98j*^4#p7=rz=74twe+hh$*%7m1ogpu'\n\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\n\nTEMPLATE_DEBUG = False\n\nTEMPLATE_DIRS = (\n    os.path.join(BASE_DIR,'templates/'),\n    )\n\nALLOWED_HOSTS = []\n\n\n# Application definition\n\nINSTALLED_APPS = (\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'fotos',\n    'index',\n)\n\nMIDDLEWARE_CLASSES = (\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n)\n\nROOT_URLCONF = 'qpasacix.urls'\n\nWSGI_APPLICATION = 'qpasacix.wsgi.application'\n\n\n# Database\n# https://docs.djangoproject.com/en/1.7/ref/settings/#databases\n\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),\n    }\n}\n\n# Internationalization\n# https://docs.djangoproject.com/en/1.7/topics/i18n/\n\nLANGUAGE_CODE = 'es-PE'\n\nTIME_ZONE = 'UTC'\n\nUSE_I18N = True\n\nUSE_L10N = True\n\nUSE_TZ = True\n\n\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/1.7/howto/static-files/\n\nSTATIC_URL = '/static/'\n\n##############################################################################\n###para Heroku\n#\n#import dj_database_url\n#import os\n#\n#if bool(os.environ.get('LOCAL_DEV', False)): \n#  DATABASES = {\n#      'default' : {\n#         'ENGINE' : 'django.db.backends.postgresql_psycopg2',\n#         'NAME' : 'db_name',\n#         #setear USERNAME Y PASS si necesitan.\n#      }\n#  } \n#else: \n#  DATABASES = {\n#      'default' : dj_database_url.config(default='postrgres://localhost')\n#  }\n#############################################################################",
 			"file": "qpasacix/settings.py",
-			"file_size": 2683,
-			"file_write_time": 130628798709780301,
 			"settings":
 			{
-				"buffer_size": 2699,
+				"buffer_size": 2882,
 				"line_ending": "Unix"
 			}
 		}
@@ -97,25 +94,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2699,
+						"buffer_size": 2882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2144,
-								2144
+								1790,
+								1790
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1203.0,
+						"translation.y": 866.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
