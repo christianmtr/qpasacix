@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 import dj_database_url#heroku
 
-import dj_database_url#heroku
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -23,21 +21,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '8j73$!$)@3m5ivnu!_y98j*^4#p7=rz=74twe+hh$*%7m1ogpu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates/'),
     )
 
 ALLOWED_HOSTS = [
-<<<<<<< HEAD
-    '.herokuapps.com',
-    '.heroku.com',
-=======
-    '*.heroku.com',
->>>>>>> 17b7d2d61d21dfe3f4a2748b9071af114d772ab0
+#    '.herokuapps.com',
+#    '*.herokuapps.com',
+#    '.heroku.com',
+#    '*.heroku.com',
     ]
 
 
@@ -84,12 +80,6 @@ DATABASES = {
          'NAME' : 'db_name',
       }
 }
-#DATABASES = {
-#      'default' : {
-#         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-#         'NAME' : 'db_name',
-#      }
-#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -109,23 +99,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-
-##############################################################################
-###para Heroku
-#
-import dj_database_url
-#import os
-#
-if bool(os.environ.get('LOCAL_DEV', False)): 
-  DATABASES = {
-      'default' : {
-         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-         'NAME' : 'db_name',
-         #setear USERNAME Y PASS si necesitan.
-      }
-  } 
-else: 
-  DATABASES = {
-      'default' : dj_database_url.config(default='postrgres://localhost')
-  }
-#############################################################################
