@@ -90,20 +90,20 @@ STATIC_URL = '/static/'
 
 ##############################################################################
 ###para Heroku
-
-import dj_database_url
-import os
-
-if bool(os.environ.get('LOCAL_DEV', False)): 
-  DATABASES = {
-      'default' : {
-         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
-         'NAME' : 'db_name',
-         #setear USERNAME Y PASS si necesitan.
-      }
-  } 
-else: 
-  DATABASES = {
-      'default' : dj_database_url.config(default='postrgres://localhost')
-  }
+#
+#import dj_database_url
+#import os
+#
+#if bool(os.environ.get('LOCAL_DEV', False)): 
+#  DATABASES = {
+#      'default' : {
+#         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+#         'NAME' : 'db_name',
+#         #setear USERNAME Y PASS si necesitan.
+#      }
+#  } 
+#else: 
+#  DATABASES = {
+#      'default' : dj_database_url.config(default='postrgres://localhost')
+#  }
 #############################################################################
