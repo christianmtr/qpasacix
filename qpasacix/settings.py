@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+import dj_database_url#heroku
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -28,7 +30,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates/'),
     )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.herokuapps.com',
+    '.heroku.com',
+    ]
 
 
 # Application definition
@@ -68,6 +73,12 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+#DATABASES = {
+#      'default' : {
+#         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+#         'NAME' : 'db_name',
+#      }
+#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
