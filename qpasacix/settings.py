@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '8j73$!$)@3m5ivnu!_y98j*^4#p7=rz=74twe+hh$*%7m1ogpu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates/'),
@@ -87,3 +87,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+##############################################################################
+###para Heroku
+
+import dj_database_url
+import os
+
+if bool(os.environ.get('LOCAL_DEV', False)): 
+  DATABASES = {
+      'default' : {
+         'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+         'NAME' : 'db_name',
+         #setear USERNAME Y PASS si necesitan.
+      }
+  } 
+else: 
+  DATABASES = {
+      'default' : dj_database_url.config(default='postrgres://localhost')
+  }
+#############################################################################
